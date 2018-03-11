@@ -28,7 +28,7 @@ loop do
         puts
         puts "How would you rate this movie? (1-5)"
         rating = gets.chomp
-        movies_file[title.to_sym] = rating.to_i
+        movies_file[title.to_sym] = rating.to_f
         #YAML.dump code from https://stackoverflow.com/questions/13948951/update-value-of-key-of-a-yaml-file-in-ruby-on-rails?rq=1
         File.open("movies.yaml", 'w') { |f| YAML.dump(movies_file, f) }
         puts
@@ -52,7 +52,7 @@ loop do
         puts
         puts "What's the new rating?"
         rating = gets.chomp
-        movies_file[title.to_sym] = rating.to_i
+        movies_file[title.to_sym] = rating.to_f
         File.open("movies.yaml", 'w') { |f| YAML.dump(movies_file, f) }
         puts
         puts "#{title} updated with a #{rating} star rating."
